@@ -1,0 +1,23 @@
+﻿<Window x:Class="wpflistview.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpflistview"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="ListView" Margin="31,10,99,60">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding m_id}"/>
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding m_name}"/>
+                    <GridViewColumn Header="LastName" Width="100" DisplayMemberBinding="{Binding m_lname}"/>
+                    <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding m_p}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Dodaj" Click="Button_Click" HorizontalAlignment="Left" Margin="727,359,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
