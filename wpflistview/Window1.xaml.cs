@@ -23,12 +23,23 @@ namespace wpflistview
         {
             InitializeComponent();
         }
+        class Newitem
+        {
+            public string m_id { get; set; }
+            public string m_name { get; set; }
+            public string m_lname { get; set; }
+            public string m_p { get; set; }
+            Random rnd = new Random();
 
-        public string m_id { get; set; }
-        public string m_name { get; set; }
-        public string m_lname { get; set; }
-        public string m_p { get; set; }
-        Random rnd = new Random();
+            public Newitem(string _name, string _lname, string _p)
+            {
+                m_id = rnd.Next().ToString();
+                m_name = _name;
+                m_lname = _lname;
+                m_p = _p;
+            }
+        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Owner as MainWindow;
