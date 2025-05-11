@@ -30,31 +30,119 @@ namespace WpfApp1
             public string? m_strName { get; set; }
             public string? m_strSecName { get; set; }
             public string? m_strSurname { get; set; }
+            public string? m_strBirth { get; set; }
+            public string? m_strPhone { get; set; }
+            public string? m_strAddr { get; set; }
+            public string? m_strTown { get; set; }
+            public string? m_strPst { get; set; }
             public Osoba()
             {
                 m_strPESEL = "00000000000";
                 m_strName = "";
                 m_strSecName = "";
                 m_strSurname = "";
+                m_strBirth = "";
+                m_strPhone = "";
+                m_strAddr = "";
+                m_strTown = "";
+                m_strPst = "";
             }
+        }
+        string cap(string x)
+        {
+            return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+        }
+
+        bool checksum(string pesel)
+        {
+            int[] weights = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+            int sum = 0;
+
+            try
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    int c = int.Parse(pesel[i].ToString());
+                    c *= weights[i];
+                    sum += c;
+                }
+                int last = 10 - (sum % 10);
+                if (pesel[10].ToString() == last.ToString())
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                // pass
+            }
+            return false;
+        }
+
+        bool checkbdate(string pesel, string bdate)
+        {
+            int year = int.Parse(pesel.Substring(0, 2));
+            int month = int.Parse(pesel.Substring(2, 2));
+            int day = int.Parse(pesel.Substring(4, 2));
+            string[] dmy = bdate.Split('.');
+
+            if (month > 20)
+            {
+                year += 2000;
+                month -= 20;
+}
+            else { year += 1900;}
+
+            if (year == int.Parse(dmy[2]) && month == int.Parse(dmy[1]) && day == int.Parse(dmy[0])) {return true;}
+
+            return false;
+        }
+
+        string checkphone(string txt)
+        {
+            if (!txt.Contains("+48")) {txt = txt.Insert(0, "+48");}
+            txt = txt.Replace(" ", "");
+            return txt;
         }
 
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            var student = new Osoba
+            if (isrequired())
             {
-                m_strPESEL = PeselTextBox.Text,
-                m_strName = FirstNameTextBox.Text,
-                m_strSecName = SecondNameTextBox.Text,
-                m_strSurname = LastNameTextBox.Text
-            };
+                if (checkbdate(PeselTextBox.Text.Trim(), BirthDateTextBox.Text.Trim()))
+                {
+                    MessageBox.Show("Data urodzenia nie zgadza się z PESEL-em!");
+                    return;
+                }
+                if (!checksum(PeselTextBox.Text.Trim()))
+                {
+                    MessageBox.Show("Błędny PESEL!");
+                    return;
+                }
 
-            MessageBox.Show($"Dodano ucznia: {student.m_strName} {student.m_strSurname}");
-            DialogResult = true;
-            Close();
+                var student = new Osoba
+                {
+                    m_strPESEL = PeselTextBox.Text.Trim(),
+                    m_strName = cap(FirstNameTextBox.Text.Trim()),
+                    m_strSecName = cap(SecondNameTextBox.Text.Trim()),
+                    m_strSurname = cap(LastNameTextBox.Text.Trim()),
+                    m_strBirth = BirthDateTextBox.Text.Trim(),
+                    m_strPhone = checkphone(PhoneNumberTextBox.Text.Trim()),
+                    m_strAddr = AddressTextBox.Text.Trim(),
+                    m_strTown = CityTextBox.Text.Trim(),
+                    m_strPst = PostalCodeTextBox.Text.Trim()
+                };
+                MessageBox.Show($"Dodano ucznia: {student.m_strName} {student.m_strSurname}");
+                DialogResult = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Wypełnij wszystkie wymagane pola!");
+            }
         }
-
+        
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             if (isinputted())
@@ -80,6 +168,17 @@ namespace WpfApp1
                    !string.IsNullOrWhiteSpace(PhoneNumberTextBox.Text) ||
                    !string.IsNullOrWhiteSpace(AddressTextBox.Text) ||
                    !string.IsNullOrWhiteSpace(CityTextBox.Text) ||
+                   !string.IsNullOrWhiteSpace(PostalCodeTextBox.Text);
+        }
+
+        private bool isrequired()
+        {
+            return !string.IsNullOrWhiteSpace(PeselTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(FirstNameTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(LastNameTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(BirthDateTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(AddressTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(CityTextBox.Text) &&
                    !string.IsNullOrWhiteSpace(PostalCodeTextBox.Text);
         }
     }

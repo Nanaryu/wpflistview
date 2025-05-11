@@ -9,14 +9,13 @@
     <Grid>
         <Menu x:Name="menu" VerticalAlignment="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New" Click="MenuItem_Click_3" IsEnabled="False"/>
+                <MenuItem Header="New" Click="MenuItem_Click_3"/>
                 <MenuItem Header="Open" Click="MenuItem_Click"/>
                 <MenuItem Header="Save" Click="MenuItem_Click_1"/>
                 <Separator/>
                 <MenuItem Header="Exit" Click="MenuItem_Click_2"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="New" Click="MenuItem_Click_3"/>
                 <MenuItem Header="Remove Selected" Click="RemoveSel_Click"/>
             </MenuItem>
         </Menu>
@@ -34,10 +33,15 @@
             </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding m_strPESEL}" Width="150"/>
-                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding m_strName}" Width="150"/>
-                    <GridViewColumn Header="Drugie imię" DisplayMemberBinding="{Binding m_strSecName}" Width="150"/>
-                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding m_strSurname}" Width="150"/>
+                    <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding m_strPESEL}" Width="100"/>
+                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding m_strName}" Width="100"/>
+                    <GridViewColumn Header="Drugie imię" DisplayMemberBinding="{Binding m_strSecName}" Width="100"/>
+                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding m_strLastName}" Width="100"/>
+                    <GridViewColumn Header="Data urodzenia" DisplayMemberBinding="{Binding m_strBirth}" Width="100"/>
+                    <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding m_strPhone}" Width="100"/>
+                    <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding m_strAddr}" Width="100"/>
+                    <GridViewColumn Header="Miejscowość" DisplayMemberBinding="{Binding m_strTown}" Width="100"/>
+                    <GridViewColumn Header="Kod pocztowy" DisplayMemberBinding="{Binding m_strPst}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

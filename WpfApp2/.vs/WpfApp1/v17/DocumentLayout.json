@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|f:\\programming\\repos\\wpflistview\\wpfapp2\\wpfapp1\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|f:\\programming\\repos\\wpflistview\\wpfapp2\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|f:\\programming\\repos\\wpflistview\\wpfapp2\\wpfapp1\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|f:\\programming\\repos\\wpflistview\\wpfapp2\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF443A71-5CF3-43F3-B9AD-E0A8DB176B6A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 286,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Window1.xaml.cs",
+              "DocumentMoniker": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\Window1.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Window1.xaml.cs",
+              "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\Window1.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Window1.xaml.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAmwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T19:40:51.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAswJIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T19:40:50.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Window1.xaml",
+              "DocumentMoniker": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\Window1.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Window1.xaml",
+              "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\Window1.xaml",
+              "RelativeToolTip": "WpfApp1\\Window1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T19:40:42.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T19:40:37.565Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

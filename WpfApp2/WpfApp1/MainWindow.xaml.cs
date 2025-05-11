@@ -31,6 +31,11 @@ namespace WpfApp1
             m_strName = "";
             m_strSecName = "";
             m_strSurname = "";
+            m_strBirth = "";
+            m_strPhone = "";
+            m_strAddr = "";
+            m_strTown = "";
+            m_strPst = "";
         }
     }
     public partial class MainWindow : Window
@@ -77,6 +82,11 @@ namespace WpfApp1
                             uczen.m_strName = columns.ElementAtOrDefault(1);
                             uczen.m_strSecName = columns.ElementAtOrDefault(2);
                             uczen.m_strSurname = columns.ElementAtOrDefault(3);
+                            uczen.m_strBirth = columns.ElementAtOrDefault(4);
+                            uczen.m_strPhone = columns.ElementAtOrDefault(5);
+                            uczen.m_strAddr = columns.ElementAtOrDefault(6);
+                            uczen.m_strTown = columns.ElementAtOrDefault(7);
+                            uczen.m_strPst = columns.ElementAtOrDefault(8);
                             mainList.Items.Add(uczen);
                         }
                     }
@@ -101,8 +111,8 @@ namespace WpfApp1
                 {
                     foreach (Osoba item in mainList.Items)
                     {
-                        var row = $"{item.m_strPESEL}{delimiter}{item.m_strName}" +
-                        $"{delimiter}{item.m_strSecName}{delimiter}{item.m_strSurname}";
+                        var row = $"{item.m_strPESEL}{delimiter}{item.m_strName}{delimiter}{item.m_strSecName}{delimiter}{item.m_strSurname}{delimiter}{item.m_strBirth}{delimiter}{item.m_strPhone}{delimiter}{item.m_strAddr}{delimiter}{item.m_strTown}{delimiter}{item.m_strPst}";
+
                         writer.WriteLine(row);
                     }
                 }
@@ -125,6 +135,11 @@ namespace WpfApp1
                     m_strName = addWindow.FirstNameTextBox.Text,
                     m_strSecName = addWindow.SecondNameTextBox.Text,
                     m_strSurname = addWindow.LastNameTextBox.Text,
+                    m_strBirth = addWindow.BirthDateTextBox.Text,
+                    m_strPhone = addWindow.PhoneNumberTextBox.Text,
+                    m_strAddr = addWindow.AddressTextBox.Text,
+                    m_strTown = addWindow.CityTextBox.Text,
+                    m_strPst = addWindow.PostalCodeTextBox.Text
                 });
 
                 mainList.Items.Refresh();
