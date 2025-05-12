@@ -81,17 +81,23 @@ namespace WpfApp1
 
         bool checkbdate(string pesel, string bdate)
         {
+            string[] dmy = bdate.Split('.');
+
+            if (dmy.Length != 3)
+            {
+                return false;
+            }
+
             int year = int.Parse(pesel.Substring(0, 2));
             int month = int.Parse(pesel.Substring(2, 2));
             int day = int.Parse(pesel.Substring(4, 2));
-            string[] dmy = bdate.Split('.');
 
             if (month > 20)
             {
                 year += 2000;
                 month -= 20;
 }
-            else { year += 1900;}
+            else { year += 1900; }
 
             if (year == int.Parse(dmy[2]) && month == int.Parse(dmy[1]) && day == int.Parse(dmy[0])) {return true;}
 
@@ -112,9 +118,15 @@ namespace WpfApp1
             {
                 if (checkbdate(PeselTextBox.Text.Trim(), BirthDateTextBox.Text.Trim()))
                 {
-                    MessageBox.Show("Data urodzenia nie zgadza się z PESEL-em!");
+                    MessageBox.Show("Data urodzenia nie zgadza się z PESEL!");
                     return;
                 }
+                if (PeselTextBox.Text.Trim().Length != 11)
+                {
+                    MessageBox.Show("PESEL musi mieć 11 cyfr!");
+                    return;
+                }
+
                 if (!checksum(PeselTextBox.Text.Trim()))
                 {
                     MessageBox.Show("Błędny PESEL!");

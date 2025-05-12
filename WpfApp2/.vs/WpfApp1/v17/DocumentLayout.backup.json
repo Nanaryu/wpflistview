@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "WpfApp1\\Window1.xaml.cs",
               "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\Window1.xaml.cs",
               "RelativeToolTip": "WpfApp1\\Window1.xaml.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAA8wHUAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAmwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T19:40:51.35Z",
               "EditorCaption": ""
@@ -49,7 +49,7 @@
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
               "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAswJIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAswJIAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T19:40:50.244Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "ToolTip": "F:\\Programming\\REPOS\\wpflistview\\WpfApp2\\WpfApp1\\MainWindow.xaml",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-11T19:40:37.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T19:40:37.565Z"
             }
           ]
         }

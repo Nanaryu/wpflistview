@@ -123,6 +123,16 @@ namespace WpfApp1
         {
             App.Current.Shutdown();
         }
+        string checkphone(string txt)
+        {
+            if (!txt.Contains("+48")) { txt = txt.Insert(0, "+48"); }
+            txt = txt.Replace(" ", "");
+            return txt;
+        }
+        string cap(string x)
+        {
+            return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+        }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
@@ -131,15 +141,15 @@ namespace WpfApp1
             {
                 mainList.Items.Add(new Osoba
                 {
-                    m_strPESEL = addWindow.PeselTextBox.Text,
-                    m_strName = addWindow.FirstNameTextBox.Text,
-                    m_strSecName = addWindow.SecondNameTextBox.Text,
-                    m_strSurname = addWindow.LastNameTextBox.Text,
-                    m_strBirth = addWindow.BirthDateTextBox.Text,
-                    m_strPhone = addWindow.PhoneNumberTextBox.Text,
-                    m_strAddr = addWindow.AddressTextBox.Text,
-                    m_strTown = addWindow.CityTextBox.Text,
-                    m_strPst = addWindow.PostalCodeTextBox.Text
+                    m_strPESEL = addWindow.PeselTextBox.Text.Trim(),
+                    m_strName = cap(addWindow.FirstNameTextBox.Text.Trim()),
+                    m_strSecName = cap(addWindow.SecondNameTextBox.Text.Trim()),
+                    m_strSurname = cap(addWindow.LastNameTextBox.Text.Trim()),
+                    m_strBirth = addWindow.BirthDateTextBox.Text.Trim(),
+                    m_strPhone = checkphone(addWindow.PhoneNumberTextBox.Text.Trim()),
+                    m_strAddr = addWindow.AddressTextBox.Text.Trim(),
+                    m_strTown = addWindow.CityTextBox.Text.Trim(),
+                    m_strPst = addWindow.PostalCodeTextBox.Text.Trim()
                 });
 
                 mainList.Items.Refresh();
