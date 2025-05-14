@@ -50,7 +50,11 @@ namespace WpfApp1
         }
         string cap(string x)
         {
-            return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+            if (x.Length > 1)
+            {
+                return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+            }
+            else return x;
         }
 
         bool checksum(string pesel)
@@ -58,25 +62,19 @@ namespace WpfApp1
             int[] weights = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
             int sum = 0;
 
-            try
+            if (pesel.Length != 11 || !pesel.All(char.IsDigit))
+                return false;
+
+            for (int i = 0; i < 10; i++)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    int c = int.Parse(pesel[i].ToString());
-                    c *= weights[i];
-                    sum += c;
-                }
-                int last = 10 - (sum % 10);
-                if (pesel[10].ToString() == last.ToString())
-                {
-                    return true;
-                }
+                int digit = int.Parse(pesel[i].ToString());
+                sum += digit * weights[i];
             }
-            catch
-            {
-                // pass
-            }
-            return false;
+
+            int lastDigit = (10 - (sum % 10)) % 10;
+            int controlDigit = int.Parse(pesel[10].ToString());
+
+            return controlDigit == lastDigit;
         }
 
         bool checkbdate(string pesel, string bdate)
@@ -99,15 +97,21 @@ namespace WpfApp1
 }
             else { year += 1900; }
 
-            if (year == int.Parse(dmy[2]) && month == int.Parse(dmy[1]) && day == int.Parse(dmy[0])) {return true;}
+            if (year == int.Parse(dmy[2]) && month == int.Parse(dmy[1]) && day == int.Parse(dmy[0])) 
+            {
+                return true;
+            }
 
             return false;
         }
 
         string checkphone(string txt)
         {
+            
             if (!txt.Contains("+48")) {txt = txt.Insert(0, "+48");}
             txt = txt.Replace(" ", "");
+            txt = txt.Substring(0, 12);
+            txt.Insert(2, " ");
             return txt;
         }
 
@@ -116,7 +120,7 @@ namespace WpfApp1
         {
             if (isrequired())
             {
-                if (checkbdate(PeselTextBox.Text.Trim(), BirthDateTextBox.Text.Trim()))
+                if (!checkbdate(PeselTextBox.Text, BirthDateTextBox.Text))
                 {
                     MessageBox.Show("Data urodzenia nie zgadza się z PESEL!");
                     return;
@@ -127,7 +131,7 @@ namespace WpfApp1
                     return;
                 }
 
-                if (!checksum(PeselTextBox.Text.Trim()))
+                if (!checksum(PeselTextBox.Text))
                 {
                     MessageBox.Show("Błędny PESEL!");
                     return;

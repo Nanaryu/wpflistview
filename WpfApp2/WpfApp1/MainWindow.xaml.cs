@@ -131,7 +131,11 @@ namespace WpfApp1
         }
         string cap(string x)
         {
-            return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+            if (x.Length > 1)
+            {
+                return x = x[0].ToString().ToUpper() + x.Remove(0, 1);
+            }
+            else return x;
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
